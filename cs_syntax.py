@@ -64,8 +64,6 @@ class CSClass():
 		string_words = (' ').join(words)
 		final_words = string_words.split(';')
 		self.statements = final_words
-		# for word in final_words:
-		# 	print(word)
 		tokens = [''.join(c for c in word if c.isalpha()) for word in string_words.split()]
 		list_tokens = list(filter(None, tokens))
 		self.tokens = list_tokens

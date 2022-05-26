@@ -2,6 +2,7 @@ from cs_syntax import CSClass
 from cs_to_cpp import CsToCpp
 from read_file import read_file
 import sys
+from collections import Counter
 
 program_name = sys.argv[0]
 arguments = sys.argv[1:]
@@ -9,6 +10,19 @@ print('File executed:', program_name)
 print('File passed: ', arguments)
 cs_file = arguments[0]
 keywords_found = read_file(cs_file)
+
+# with open(cs_file) as fin :
+#     text = fin.read()
+# print(text)
+# def check(my_string):
+#     brackets = ['()', '{}', '[]']
+#     while any(x in my_string for x in brackets):
+#         for br in brackets:
+#             my_string = my_string.replace(br, '')
+#     return not my_string
+# brack_check = check('{[]{()}}')
+# print(brack_check)
+
 cpp_bodies = []
 for file in arguments:
     cs = CSClass(keywords_found)
